@@ -1,0 +1,1706 @@
+[
+    {
+        "id": "a1bc0d193482e886",
+        "type": "tab",
+        "label": "CONTROL_TEMP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a06b6764662d9b0e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.80.49",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a2a93c7788d143b2",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "tab1",
+        "type": "ui_tab",
+        "name": "Dashboard Temp",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "g_s1",
+        "type": "ui_group",
+        "name": "Sensor 1",
+        "tab": "tab1",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "g_s2",
+        "type": "ui_group",
+        "name": "Sensor 2",
+        "tab": "tab1",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "g_s3",
+        "type": "ui_group",
+        "name": "Sensor 3",
+        "tab": "tab1",
+        "order": 3,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "g_s4",
+        "type": "ui_group",
+        "name": "Sensor 4",
+        "tab": "tab1",
+        "order": 4,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "g_s5",
+        "type": "ui_group",
+        "name": "Sensor 5",
+        "tab": "tab1",
+        "order": 5,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "3c5dd8154b6adea7",
+        "type": "mqtt in",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "topic": "temperatura/sensor1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a06b6764662d9b0e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "a7cff84248ac7aca",
+                "e266d86876755b3f",
+                "2b2b2b2b2b2b2b2b"
+            ]
+        ]
+    },
+    {
+        "id": "683c71b53f7532f6",
+        "type": "mqtt in",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "topic": "temperatura/sensor2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a06b6764662d9b0e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "7f5ac7f706240386",
+                "1bba4109d034a501",
+                "138d7837bf913f96"
+            ]
+        ]
+    },
+    {
+        "id": "fb2f23570bcff93c",
+        "type": "mqtt in",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "topic": "temperatura/sensor3",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a06b6764662d9b0e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "ac0f5cfc680c329e",
+                "4be0eaeaa707518e",
+                "ce2d01338e1aee24"
+            ]
+        ]
+    },
+    {
+        "id": "0e674e1eb9aab57f",
+        "type": "mqtt in",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "topic": "temperatura/sensor4",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a06b6764662d9b0e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 700,
+        "wires": [
+            [
+                "849cf5c07036a6f0",
+                "e53dc34653366c32",
+                "5b2d9d0a7d1c184b"
+            ]
+        ]
+    },
+    {
+        "id": "8a92481def39d703",
+        "type": "mqtt in",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "topic": "temperatura/sensor5",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a06b6764662d9b0e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 900,
+        "wires": [
+            [
+                "cb653273b53243a8",
+                "46d140f440f3fcbf",
+                "39f51b9cd8cf0e53"
+            ]
+        ]
+    },
+    {
+        "id": "805ee309e645522c",
+        "type": "ui_text",
+        "z": "a1bc0d193482e886",
+        "group": "g_s1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Salida1",
+        "label": "Salida",
+        "format": "{{msg.payload}}",
+        "layout": "",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 920,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "af036cabd532a7e4",
+        "type": "ui_text",
+        "z": "a1bc0d193482e886",
+        "group": "g_s2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Salida2",
+        "label": "Salida",
+        "format": "{{msg.payload}}",
+        "x": 920,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d70a2fc97cffea09",
+        "type": "ui_text",
+        "z": "a1bc0d193482e886",
+        "group": "g_s3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Salida3",
+        "label": "Salida",
+        "format": "{{msg.payload}}",
+        "x": 920,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "230c2f2e0453f799",
+        "type": "ui_text",
+        "z": "a1bc0d193482e886",
+        "group": "g_s4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Salida4",
+        "label": "Salida",
+        "format": "{{msg.payload}}",
+        "x": 920,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "013bbbbeec3f3bab",
+        "type": "ui_text",
+        "z": "a1bc0d193482e886",
+        "group": "g_s5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Salida5",
+        "label": "Salida",
+        "format": "{{msg.payload}}",
+        "x": 920,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "1bba4109d034a501",
+        "type": "ui_chart",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "group": "g_s2",
+        "order": 4,
+        "width": "6",
+        "height": "4",
+        "label": "Historico Sensor 2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#3e1eb3",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4be0eaeaa707518e",
+        "type": "ui_chart",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "group": "g_s3",
+        "order": 4,
+        "width": "6",
+        "height": "4",
+        "label": "Historico Sensor 3",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1eb366",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e53dc34653366c32",
+        "type": "ui_chart",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "group": "g_s4",
+        "order": 4,
+        "width": "6",
+        "height": "4",
+        "label": "Historico Sensor 4",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#45e866",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46d140f440f3fcbf",
+        "type": "ui_chart",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "group": "g_s5",
+        "order": 4,
+        "width": "6",
+        "height": "4",
+        "label": "Historico Sensor 5",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#fbab3c",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e266d86876755b3f",
+        "type": "ui_chart",
+        "z": "a1bc0d193482e886",
+        "name": "",
+        "group": "g_s1",
+        "order": 4,
+        "width": "6",
+        "height": "4",
+        "label": "Historico Sensor 1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#fff833",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "668115728c5d87bb",
+        "type": "ui_led",
+        "z": "a1bc0d193482e886",
+        "order": 3,
+        "group": "g_s1",
+        "width": 0,
+        "height": 0,
+        "label": "Estado",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LED1",
+        "x": 1070,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f11ae486ec8df342",
+        "type": "ui_led",
+        "z": "a1bc0d193482e886",
+        "order": 3,
+        "group": "g_s2",
+        "width": 0,
+        "height": 0,
+        "label": "Estado",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LED2",
+        "x": 1070,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f3570736c8f76d29",
+        "type": "ui_led",
+        "z": "a1bc0d193482e886",
+        "order": 3,
+        "group": "g_s3",
+        "width": 0,
+        "height": 0,
+        "label": "Estado",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LED3",
+        "x": 1070,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "32ab424642169c87",
+        "type": "ui_led",
+        "z": "a1bc0d193482e886",
+        "order": 3,
+        "group": "g_s4",
+        "width": 0,
+        "height": 0,
+        "label": "Estado",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LED4",
+        "x": 1070,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "aa70b44f0a4f63ad",
+        "type": "ui_led",
+        "z": "a1bc0d193482e886",
+        "order": 3,
+        "group": "g_s5",
+        "width": 0,
+        "height": 0,
+        "label": "Estado",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LED5",
+        "x": 1090,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "a7cff84248ac7aca",
+        "type": "ui_gauge",
+        "z": "a1bc0d193482e886",
+        "name": "Sensor 1",
+        "group": "g_s1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "35",
+        "colors": [
+            "#87cefa",
+            "#1e90ff",
+            "#191970"
+        ],
+        "seg1": "15",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "7f5ac7f706240386",
+        "type": "ui_gauge",
+        "z": "a1bc0d193482e886",
+        "name": "Sensor 2",
+        "group": "g_s2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "35",
+        "colors": [
+            "#87cefa",
+            "#1e90ff",
+            "#191970"
+        ],
+        "seg1": "15",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "ac0f5cfc680c329e",
+        "type": "ui_gauge",
+        "z": "a1bc0d193482e886",
+        "name": "Sensor 3",
+        "group": "g_s3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "35",
+        "colors": [
+            "#87cefa",
+            "#1e90ff",
+            "#191970"
+        ],
+        "seg1": "15",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "849cf5c07036a6f0",
+        "type": "ui_gauge",
+        "z": "a1bc0d193482e886",
+        "name": "Sensor 4",
+        "group": "g_s4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "35",
+        "colors": [
+            "#87cefa",
+            "#1e90ff",
+            "#191970"
+        ],
+        "seg1": "15",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "cb653273b53243a8",
+        "type": "ui_gauge",
+        "z": "a1bc0d193482e886",
+        "name": "Sensor 5",
+        "group": "g_s5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "35",
+        "colors": [
+            "#87cefa",
+            "#1e90ff",
+            "#191970"
+        ],
+        "seg1": "15",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "2b2b2b2b2b2b2b2b",
+        "type": "switch",
+        "z": "a1bc0d193482e886",
+        "name": "Temperatura < 30?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 100,
+        "wires": [
+            [
+                "3c3c3c3c3c3c3c3c"
+            ],
+            [
+                "4d4d4d4d4d4d4d4d"
+            ]
+        ]
+    },
+    {
+        "id": "3c3c3c3c3c3c3c3c",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 80,
+        "wires": [
+            [
+                "5e5e5e5e5e5e5e5e",
+                "805ee309e645522c",
+                "8ccf78a37711eb4b"
+            ]
+        ]
+    },
+    {
+        "id": "4d4d4d4d4d4d4d4d",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 120,
+        "wires": [
+            [
+                "5e5e5e5e5e5e5e5e",
+                "805ee309e645522c",
+                "cb820292df0dcd4e"
+            ]
+        ]
+    },
+    {
+        "id": "5e5e5e5e5e5e5e5e",
+        "type": "mqtt out",
+        "z": "a1bc0d193482e886",
+        "name": "Rta_sensor1",
+        "topic": "resistencia/control/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a06b6764662d9b0e",
+        "x": 930,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8ccf78a37711eb4b",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set True",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 80,
+        "wires": [
+            [
+                "668115728c5d87bb"
+            ]
+        ]
+    },
+    {
+        "id": "cb820292df0dcd4e",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set False",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 120,
+        "wires": [
+            [
+                "668115728c5d87bb"
+            ]
+        ]
+    },
+    {
+        "id": "5c67117e36429c2e",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set True",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 280,
+        "wires": [
+            [
+                "f11ae486ec8df342"
+            ]
+        ]
+    },
+    {
+        "id": "a958115c243833aa",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set False",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 320,
+        "wires": [
+            [
+                "f11ae486ec8df342"
+            ]
+        ]
+    },
+    {
+        "id": "138d7837bf913f96",
+        "type": "switch",
+        "z": "a1bc0d193482e886",
+        "name": "Temperatura < 30?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 300,
+        "wires": [
+            [
+                "6c7a6634a3f9199c"
+            ],
+            [
+                "3e8048881e88f197"
+            ]
+        ]
+    },
+    {
+        "id": "6c7a6634a3f9199c",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 280,
+        "wires": [
+            [
+                "5c67117e36429c2e",
+                "d51f324fb6ca8316",
+                "af036cabd532a7e4"
+            ]
+        ]
+    },
+    {
+        "id": "3e8048881e88f197",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "a958115c243833aa",
+                "d51f324fb6ca8316",
+                "af036cabd532a7e4"
+            ]
+        ]
+    },
+    {
+        "id": "d51f324fb6ca8316",
+        "type": "mqtt out",
+        "z": "a1bc0d193482e886",
+        "name": "Rta_sensor2",
+        "topic": "resistencia/control/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a06b6764662d9b0e",
+        "x": 930,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "63963560c1a872cb",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set True",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 480,
+        "wires": [
+            [
+                "f3570736c8f76d29"
+            ]
+        ]
+    },
+    {
+        "id": "3801264557e45958",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set False",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 520,
+        "wires": [
+            [
+                "f3570736c8f76d29"
+            ]
+        ]
+    },
+    {
+        "id": "ce2d01338e1aee24",
+        "type": "switch",
+        "z": "a1bc0d193482e886",
+        "name": "Temperatura < 30?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "212a9ec24188f971"
+            ],
+            [
+                "00632582e00f5429"
+            ]
+        ]
+    },
+    {
+        "id": "212a9ec24188f971",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 480,
+        "wires": [
+            [
+                "63963560c1a872cb",
+                "d70a2fc97cffea09",
+                "de6c2b6ada52f13e"
+            ]
+        ]
+    },
+    {
+        "id": "00632582e00f5429",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 520,
+        "wires": [
+            [
+                "3801264557e45958",
+                "d70a2fc97cffea09",
+                "de6c2b6ada52f13e"
+            ]
+        ]
+    },
+    {
+        "id": "de6c2b6ada52f13e",
+        "type": "mqtt out",
+        "z": "a1bc0d193482e886",
+        "name": "Rta_sensor3",
+        "topic": "resistencia/control/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a06b6764662d9b0e",
+        "x": 930,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "2a575484c7ed5014",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set True",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 680,
+        "wires": [
+            [
+                "32ab424642169c87"
+            ]
+        ]
+    },
+    {
+        "id": "a2f2728e6bccda9c",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set False",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 720,
+        "wires": [
+            [
+                "32ab424642169c87"
+            ]
+        ]
+    },
+    {
+        "id": "5b2d9d0a7d1c184b",
+        "type": "switch",
+        "z": "a1bc0d193482e886",
+        "name": "Temperatura < 30?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 700,
+        "wires": [
+            [
+                "b23f4d5b9d06e736"
+            ],
+            [
+                "c7dd32d5de444493"
+            ]
+        ]
+    },
+    {
+        "id": "b23f4d5b9d06e736",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 680,
+        "wires": [
+            [
+                "2a575484c7ed5014",
+                "230c2f2e0453f799",
+                "623583a913eeb345"
+            ]
+        ]
+    },
+    {
+        "id": "c7dd32d5de444493",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 720,
+        "wires": [
+            [
+                "a2f2728e6bccda9c",
+                "230c2f2e0453f799",
+                "623583a913eeb345"
+            ]
+        ]
+    },
+    {
+        "id": "623583a913eeb345",
+        "type": "mqtt out",
+        "z": "a1bc0d193482e886",
+        "name": "Rta_sensor4",
+        "topic": "resistencia/control/4",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a06b6764662d9b0e",
+        "x": 930,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "ee714bce3e91e3cc",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set True",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 880,
+        "wires": [
+            [
+                "aa70b44f0a4f63ad"
+            ]
+        ]
+    },
+    {
+        "id": "99cf6a5e57050596",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set False",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 920,
+        "wires": [
+            [
+                "aa70b44f0a4f63ad"
+            ]
+        ]
+    },
+    {
+        "id": "39f51b9cd8cf0e53",
+        "type": "switch",
+        "z": "a1bc0d193482e886",
+        "name": "Temperatura < 30?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 900,
+        "wires": [
+            [
+                "f7bdb8431cd7117b"
+            ],
+            [
+                "41872c7ea65ea71b"
+            ]
+        ]
+    },
+    {
+        "id": "f7bdb8431cd7117b",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 880,
+        "wires": [
+            [
+                "ee714bce3e91e3cc",
+                "8356a07728b12d85",
+                "013bbbbeec3f3bab"
+            ]
+        ]
+    },
+    {
+        "id": "41872c7ea65ea71b",
+        "type": "change",
+        "z": "a1bc0d193482e886",
+        "name": "Set 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 920,
+        "wires": [
+            [
+                "99cf6a5e57050596",
+                "8356a07728b12d85",
+                "013bbbbeec3f3bab"
+            ]
+        ]
+    },
+    {
+        "id": "8356a07728b12d85",
+        "type": "mqtt out",
+        "z": "a1bc0d193482e886",
+        "name": "Rta_sensor5",
+        "topic": "resistencia/control/5",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a06b6764662d9b0e",
+        "x": 930,
+        "y": 1000,
+        "wires": []
+    }
+]
