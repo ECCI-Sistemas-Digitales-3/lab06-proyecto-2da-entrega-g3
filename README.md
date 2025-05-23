@@ -2,5 +2,10 @@
 # Lab06: Proyecto 2da. entrega
 
 ## Integrantes
+[Julieth Alejandra Sandoval Estupiñan](https://github.com/Julieth-Sandoval)
+
+[Jose Angel Campo Vargas](https://github.com/Jose-Angel-Campo-Vargas)
+
+[David Leonardo Castaño Madrigal](https://github.com/IngleonardocM)
 
 ## Documentación
